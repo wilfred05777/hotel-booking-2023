@@ -1,14 +1,25 @@
 
-import './App.scss';
+/// pages
+import Home from './pages/home/Home';
+import List from './pages/list/List';
+import Hotel from './pages/hotel/Hotel';
 
-function App() {
+/// packages
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+/// styles
+import "./App.scss";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-       
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/list" element={<List/>}/>
+        <Route path="/hotel" element={<Hotel/>}/>
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
