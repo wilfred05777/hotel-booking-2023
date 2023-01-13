@@ -1,12 +1,14 @@
-import './home.scss';
-import Navbar from '../../components/navbar/Navbar'
+import Navbar from "../../components/navbar/Navbar";
+import Header from "../../components/header/Header";
+import "./home.scss";
 
 const Home = () => {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
+      <Header />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
