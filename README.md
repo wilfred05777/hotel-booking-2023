@@ -1,8 +1,8 @@
-# Booking Hotel
+# Booking Hotel MERN
 
 #### Track Your Job Search
 
-Project in Action - [Jobify](https://www.jobify.live/)
+Project in Action - [Booking Hotel MERN](https://www.jobify.live/)
 
 #### Support
 
