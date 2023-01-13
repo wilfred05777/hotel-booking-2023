@@ -1,1 +1,21 @@
-{}
+{
+  "name": "hotel-booking-2023",
+  "description": "Project in Action - [Booking Hotel MERN](https://www.jobify.live/)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilfred05777/hotel-booking-2023.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wilfred05777/hotel-booking-2023/issues"
+  },
+  "homepage": "https://github.com/wilfred05777/hotel-booking-2023#readme"
+}
