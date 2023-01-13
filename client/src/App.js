@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 /// styles
 import "./App.scss";
+import React from "react";
 
 const App = () => {
   return (
