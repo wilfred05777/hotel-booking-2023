@@ -11,13 +11,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    span{
-      .logo{
-        font-weight: 800;
-      }
-    }
-
+    .logo{
+            font-weight: 500;
+          }
+  
     .navItems{
         .navButton{
           margin-left: 20px;
