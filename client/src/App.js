@@ -1,25 +1,25 @@
+import logo from './logo.svg';
+import './App.scss';
 
-/// pages
-import Home from './pages/home/Home';
-import List from './pages/list/List';
-import Hotel from './pages/hotel/Hotel';
-
-/// packages
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-/// styles
-import "./App.scss";
-
-const App = () => {
+function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/list" element={<List/>}/>
-        <Route path="/hotel" element={<Hotel/>}/>
-      </Routes>
-    </BrowserRouter>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
-};
+}
 
 export default App;
