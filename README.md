@@ -549,7 +549,7 @@ export default Featured;
               background-color: #fff;
 
               &:disabled {
-                cursor: not-allowed; //prevent and disabled clicked
+                cursor: not-allowed;
               }
             }
             .optionCounterNumber {
