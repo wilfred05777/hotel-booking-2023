@@ -82,7 +82,11 @@ npm install normalize.css
 
 #### Header & Navbar Creation
 
+##### Setting url / it will show header section if navigate to /hotel it will hide
+
+<hr>
 - Hotel.jsx
+
 ```sh
 Hotel.jsx
   <Navbar />
@@ -90,8 +94,12 @@ Hotel.jsx
 
 
 ```
+
 - Header.jsx
+
 ```sh
+  const Header = ({ type }) => {
+  ...
   <div className="header">
       <div
         /// mo trigger kung naa ko sa url / or /hotel
