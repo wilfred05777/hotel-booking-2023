@@ -82,12 +82,16 @@ npm install normalize.css
 
 #### Header & Navbar Creation
 
+- Hotel.jsx
 ```sh
 Hotel.jsx
   <Navbar />
   <Header type="list" />
 
-Header.jsx
+
+```
+- Header.jsx
+```sh
   <div className="header">
       <div
         /// mo trigger kung naa ko sa url / or /hotel
