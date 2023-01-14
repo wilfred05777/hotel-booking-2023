@@ -197,11 +197,15 @@ npm install normalize.css
 
 // option for adult , children and rooms state
 const [openOptions, setOpenOptions] = useState(false);
+
+// ang mo consume sa option is a pointer and setOption is the updater sa output
 const [options, setOptions] = useState({
+  // initial value sa options
   adult: 1,
   children: 0,
   room: 1
 });
+
 // --------------------------------------------------
 
 const handleOption = (name, operation) => {
@@ -213,6 +217,19 @@ const handleOption = (name, operation) => {
     };
   });
 };
+// ----------------------------------------------------
+{
+  /* how did this happen? name? and the ui connection confuse? */
+  // My Understanding:
+  // diri ipagawas sa cosnt [options, setOptions]
+  // ang initial value updated value
+}
+{
+  `
+  ${options.adult} adult - ${options.children} children - ${options.room} room
+  `;
+}
+
 // -----------------------------------------------------
 
 //  ma trigger nga ma disable kung mo baba equal or less than zero ang count pag iclick sa user ang minus/d = for decrement
@@ -237,8 +254,6 @@ const handleOption = (name, operation) => {
   </div>
 </div>;
 ```
-
-<hr>
 
 <hr>
 
