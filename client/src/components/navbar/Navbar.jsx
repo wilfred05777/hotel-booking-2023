@@ -1,8 +1,8 @@
-import './navbar.scss';
-
+import "./navbar.scss";
+import React from "react";
 const Navbar = () => {
   return (
-    <div className='navbar'>
+    <div className="navbar">
       <div className="navContainer">
         <span className="logo">Julian's Hotel</span>
         <div className="navItems">
@@ -11,7 +11,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
