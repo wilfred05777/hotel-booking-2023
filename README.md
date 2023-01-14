@@ -80,6 +80,8 @@ npm install normalize.css
 - Coding Addict - [Default Starter Video](https://youtu.be/UDdyGNlQK5w)
 - Repo - [Default Starter Repo](https://github.com/john-smilga/default-starter)
 
+<hr>
+
 #### Header & Navbar Creation
 
 ##### Setting url / it will show header section if navigate to /hotel it will hide
