@@ -119,11 +119,27 @@ npm install normalize.css
     >
     {`
     ${
+      //  diri mo reflect ang output sa gi select  sa <DateRange>
+      // gi convert sa format() from plain javascript to react deadable
+      // data[0] zero means first index
       format(date[0].startDate, "MM/dd/yyyy")} to ${format(
       date[0].endDate,
       "MM/dd/yyyy"
     )}
     `}</span>
+
+    // ...
+    { /// state ni sa calendar sa searchbar kung  iclick mo gawas ang <DateRange> which is ang calendar selection
+    openDate && (
+      <DateRange
+        editableDateInputs={true}
+        onChange={(item) => setDate([item.selection])}
+        moveRangeOnFirstSelection={false}
+        ranges={date}
+        className="date"
+      />
+    );
+}
     // ...more line of code ...
 ```
 
@@ -173,6 +189,58 @@ npm install normalize.css
 ```
 
 <hr>
+- code analysis
+
+```jsx
+//  Header.jsx
+// --------------------------------------------------
+
+// option for adult , children and rooms state
+const [openOptions, setOpenOptions] = useState(false);
+const [options, setOptions] = useState({
+  adult: 1,
+  children: 0,
+  room: 1
+});
+// --------------------------------------------------
+
+const handleOption = (name, operation) => {
+  setOptions((prev) => {
+    return {
+      ...prev,
+      //// how did this happen? name? and the ui connection confuse?
+      [name]: operation === "i" ? options[name] + 1 : options[name] - 1
+    };
+  });
+};
+// -----------------------------------------------------
+
+//  ma trigger nga ma disable kung mo baba equal or less than zero ang count pag iclick sa user ang minus/d = for decrement
+<div className="optionItem">
+  <span className="optionText">Adult</span>
+  <div className="optionCounter">
+    <button
+      /// prevents going to negative number
+      disabled={options.adult <= 0}
+      className="optionCounterButton"
+      onClick={() => handleOption("adult", "d")}
+    >
+      -
+    </button>
+    <span className="optionCounterNumber">{options.adult}</span>
+    <button
+      className="optionCounterButton"
+      onClick={() => handleOption("adult", "i")}
+    >
+      +
+    </button>
+  </div>
+</div>;
+```
+
+<hr>
+
+<hr>
 
 ##### Setting url / it will show header section if navigate to /hotel it will hide
 
@@ -208,15 +276,5 @@ const Header = ({ type }) => {
 ```
 
 ```jsx
-{
-  openDate && (
-    <DateRange
-      editableDateInputs={true}
-      onChange={(item) => setDate([item.selection])}
-      moveRangeOnFirstSelection={false}
-      ranges={date}
-      className="date"
-    />
-  );
-}
+
 ```
