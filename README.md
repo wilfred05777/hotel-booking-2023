@@ -159,8 +159,21 @@ const Header = ({ type }) => {
 ```
 
 ```scss
+  // In Header.jsx
+  // note:
+  // <div className="header"> sulod sa header selector ang mga child selector
+  // <div
+  //
+  // ang mga child select are : headerSearchItem, headerSearchInput, .date, headerSearchText
+  //
+  // Dili mo gana ang position absolute kung walay naka assign na position relative sa parent element
+
+  // Reminder to myself sa styling sa scss/css
+  // Child Selector = position: absolute
+  // Parent Selector = position: relative
+
   //header.scss
-    <!--parent element -->
+  //  parent element
     .header{
       background-color: #003580;
       color: #fff;
