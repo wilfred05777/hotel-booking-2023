@@ -79,3 +79,28 @@ npm install normalize.css
 - if any questions about normalize or specific styles
 - Coding Addict - [Default Starter Video](https://youtu.be/UDdyGNlQK5w)
 - Repo - [Default Starter Repo](https://github.com/john-smilga/default-starter)
+
+#### Header & Navbar Creation
+
+```sh
+Hotel.jsx
+  <Navbar />
+  <Header type="list" />
+
+Header.jsx
+  <div className="header">
+      <div
+        /// mo trigger kung naa ko sa url / or /hotel
+        className={
+          type === "list" ? "headerContainer listMode" : "headerContainer"
+        }
+      >
+    ....
+
+  {/* pag ang type dili equal sa list ihide nya   */}
+    {type !== "list" && (
+        <>
+        ...code
+        </>
+    }
+```
