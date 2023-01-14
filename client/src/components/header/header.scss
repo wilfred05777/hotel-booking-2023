@@ -68,6 +68,11 @@
           outline: none; /// removes the border outline sa input box
         }
 
+        .date{
+          position: absolute;
+          top: 40px; /// mo baba sa search bar tungod sa position absolute ug relative:parent element
+        }
+
         .headerSearchText{
           color: lightgray;
           cursor: pointer;
@@ -78,7 +83,7 @@
         }
 
       }
-      
+
     }
   }
 
