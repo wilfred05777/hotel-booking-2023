@@ -87,6 +87,7 @@ npm install normalize.css
 ##### Setting url / it will show header section if navigate to /hotel it will hide
 
 <hr>
+
 - Hotel.jsx
 
 ```sh
@@ -114,4 +115,60 @@ const Header = ({ type }) => {
       ...code
       </>
 }
+```
+
+<hr>
+
+##### Set range-date in Search Bar
+
+- npm i react-date-range [npm package](https://www.npmjs.com/package/react-date-range)
+- [react date range official doc](https://hypeserver.github.io/react-date-range/)
+-
+
+```sh
+Header.jsx
+  import { DateRange } from "react-date-range";
+  import "react-date-range/dist/styles.css"; // main css file
+  import "react-date-range/dist/theme/default.css"; // theme css file
+  import { format } from "date-fns";
+  ...
+
+  /// hides the range-date upon first load of the front page
+  const [openDate, setOpenDate] = useState(false);
+
+  const [date, setDate] = useState([
+    {
+      startDate: new Date(), //
+      endDate: new Date(), // format because its a pure javascript
+      key: "selection"
+    }
+  ]);
+
+  ...
+  {/* <span className="headerSearchText">date to date</span> */}
+    <span
+      /// !openDate opposite | hide and show calendar
+      onClick={() => setOpenDate(!openDate)}
+      className="headerSearchText"
+    >{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
+      date[0].endDate,
+      "MM/dd/yyyy"
+    )} `}</span>
+
+```
+
+<hr>
+
+```sh
+
+{openDate && (
+    <DateRange
+      editableDateInputs={true}
+      onChange={(item) => setDate([item.selection])}
+      moveRangeOnFirstSelection={false}
+      ranges={date}
+      className="date"
+    />
+                )
+  }
 ```
