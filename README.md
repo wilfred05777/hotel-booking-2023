@@ -189,7 +189,10 @@ npm install normalize.css
 ```
 
 <hr>
-- code analysis
+
+##### Calendar<DateRange> & Option {adult, children, room}
+
+- code analysis / it will show Option & Calendar section if Toggle click back and forth and updates the UI
 
 ```jsx
 //  Header.jsx
