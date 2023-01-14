@@ -84,39 +84,6 @@ npm install normalize.css
 
 #### Header & Navbar Creation
 
-##### Setting url / it will show header section if navigate to /hotel it will hide
-
-<hr>
-
-```jsx
-// Hotel.jsx
-<Navbar />
-<Header type="list" />
-```
-
-```jsx
-// Header.jsx
-const Header = ({ type }) => {
-...
-<div className="header">
-    <div
-      /// mo trigger kung naa ko sa url / or /hotel
-      className={
-        type === "list" ? "headerContainer listMode" : "headerContainer"
-      }
-    >
-  ....
-
-  {/* pag ang type dili equal sa list ihide nya,
-          if kung mo navigate ang user sa default ur which is '/' makita ang Header section and if pag mo navigate sa /hotel ihide ang Header section ug SearchBar
-  */}
-  {type !== "list" && (
-      <>
-      // ...code
-      </>
-  }
-```
-
 <hr>
 
 ##### Set range-date in Navbar, Searchbar and Styling
@@ -206,6 +173,39 @@ const Header = ({ type }) => {
 ```
 
 <hr>
+
+##### Setting url / it will show header section if navigate to /hotel it will hide
+
+<hr>
+
+```jsx
+// Hotel.jsx
+<Navbar />
+<Header type="list" />
+```
+
+```jsx
+// Header.jsx
+const Header = ({ type }) => {
+...
+<div className="header">
+    <div
+      /// mo trigger kung naa ko sa url / or /hotel
+      className={
+        type === "list" ? "headerContainer listMode" : "headerContainer"
+      }
+    >
+  ....
+
+  {/* pag ang type dili equal sa list ihide nya,
+          if kung mo navigate ang user sa default ur which is '/' makita ang Header section and if pag mo navigate sa /hotel ihide ang Header section ug SearchBar
+  */}
+  {type !== "list" && (
+      <>
+      // ...code
+      </>
+  }
+```
 
 ```jsx
 {
