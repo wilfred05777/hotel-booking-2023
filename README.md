@@ -88,16 +88,14 @@ npm install normalize.css
 
 <hr>
 
-- Hotel.jsx
-
 ```jsx
+// Hotel.jsx
 <Navbar />
 <Header type="list" />
 ```
 
-- Header.jsx
-
 ```jsx
+// Header.jsx
 const Header = ({ type }) => {
 ...
 <div className="header">
