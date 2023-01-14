@@ -403,7 +403,7 @@ export default Featured;
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  z-index: 1;
+  z-index: 1; /// para dili mo overlap ang featured
 
   .featuredItem {
     position: relative;
@@ -430,12 +430,13 @@ export default Featured;
 
 ```scss
 // header.scss
+// z-index ang pinaka gamay ug value 1 is behind and the largest value will be the front
 .header {
   background-color: #003580;
   color: #fff;
   display: flex;
   justify-content: center;
-  position: relative; //// parent element is here
+  position: relative;
 
   .headerContainer {
     width: 100%;
@@ -484,11 +485,11 @@ export default Featured;
       justify-content: space-around;
       padding: 20px 0px;
       border-radius: 5px;
-      position: absolute; /// this wont work if if there is no position relative on the parent element
+      position: absolute;
       bottom: -25px;
-      width: 100%; /// naka set ug 100%
-      max-width: 1024px; /// para dili mo lamapas
-      z-index: 999; /// para dili mo overlapang featured
+      width: 100%;
+      max-width: 1024px;
+      z-index: 999; /// para dili mo overlap ang featured
 
       .headerSearchItem {
         display: flex;
@@ -497,13 +498,13 @@ export default Featured;
 
         .headerSearchInput {
           border: none;
-          outline: none; /// removes the border outline sa input box
+          outline: none;
         }
 
         .date {
           position: absolute;
-          top: 40px; /// mo baba sa search bar tungod sa position absolute ug relative:parent element
-          z-index: 2;
+          top: 40px;
+          z-index: 2; /// para dili mo overlap ang featured
         }
 
         .headerSearchText {
@@ -517,7 +518,7 @@ export default Featured;
       }
 
       .options {
-        z-index: 2;
+        z-index: 2; /// para dili mo overlap ang featured
         position: absolute;
         top: 40px;
         background-color: #fff;
