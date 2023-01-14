@@ -10,14 +10,14 @@ Find the App Useful? [You can always buy me a coffee](https://www.buymeacoffee.c
 
 #### Run The App Locally
 
-```sh
+```jsx
 npm run install-dependencies
 ```
 
 - rename .env.temp to .env
 - setup values for - MONGO_URL, JWT_SECRET, JWT_LIFETIME
 
-```sh
+```jsx
 npm start
 ```
 
@@ -28,15 +28,15 @@ npm start
 - create <b>client</b> folder
 - open terminal
 
-```sh
+```jsx
 cd client
 ```
 
-```sh
+```jsx
 npx create-react-app .
 ```
 
-```sh
+```jsx
 npm start
 ```
 
@@ -69,7 +69,7 @@ npm start
 - small CSS file that provides cross-browser consistency in the default styling of HTML elements.
 - [normalize docs](https://necolas.github.io/normalize.css/)
 
-```sh
+```jsx
 npm install normalize.css
 ```
 
@@ -90,14 +90,14 @@ npm install normalize.css
 
 - Hotel.jsx
 
-```sh
+```jsx
 <Navbar />
 <Header type="list" />
 ```
 
 - Header.jsx
 
-```sh
+```jsx
 const Header = ({ type }) => {
 ...
 <div className="header">
@@ -125,7 +125,7 @@ const Header = ({ type }) => {
 - [react date range official doc](https://hypeserver.github.io/react-date-range/)
 -
 
-```sh
+```jsx
 Header.jsx
   import { DateRange } from "react-date-range";
   import "react-date-range/dist/styles.css"; // main css file
@@ -161,7 +161,7 @@ Header.jsx
     ...more line of code ...
 ```
 
-```sh
+```jsx
   header.scss
     <!--parent element -->
     .header{
@@ -195,9 +195,9 @@ Header.jsx
 
 <hr>
 
-```sh
-
-{openDate && (
+```jsx
+{
+  openDate && (
     <DateRange
       editableDateInputs={true}
       onChange={(item) => setDate([item.selection])}
@@ -205,6 +205,6 @@ Header.jsx
       ranges={date}
       className="date"
     />
-                )
-  }
+  );
+}
 ```
