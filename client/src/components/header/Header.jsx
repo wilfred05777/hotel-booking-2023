@@ -136,7 +136,7 @@ const Header = ({ type }) => {
                       <div className="optionCounter">
                         <button
                           /// prevents going to negative number
-                          disabled={options.adult <= 0}
+                          disabled={options.adult <= 1}
                           className="optionCounterButton"
                           onClick={() => handleOption("adult", "d")}
                         >
@@ -157,7 +157,7 @@ const Header = ({ type }) => {
                       <span className="optionText">Children</span>
                       <div className="optionCounter">
                         <button
-                          disabled={options.children <= 0}
+                          disabled={options.children <= 1}
                           className="optionCounterButton"
                           onClick={() => handleOption("children", "d")}
                         >
@@ -178,7 +178,7 @@ const Header = ({ type }) => {
                       <span className="optionText">Room</span>
                       <div className="optionCounter">
                         <button
-                          disabled={options.room <= 0}
+                          disabled={options.room <= 1}
                           className="optionCounterButton"
                           onClick={() => handleOption("room", "d")}
                         >
