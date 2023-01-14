@@ -119,7 +119,7 @@ const Header = ({ type }) => {
 
 <hr>
 
-##### Set range-date in Search Bar
+##### Set range-date in Navbar, Searchbar and Styling
 
 - npm i react-date-range [npm package](https://www.npmjs.com/package/react-date-range)
 - [react date range official doc](https://hypeserver.github.io/react-date-range/)
@@ -150,10 +150,46 @@ Header.jsx
       /// !openDate opposite | hide and show calendar
       onClick={() => setOpenDate(!openDate)}
       className="headerSearchText"
-    >{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
+    >
+    {`
+    ${
+      format(date[0].startDate, "MM/dd/yyyy")} to ${format(
       date[0].endDate,
       "MM/dd/yyyy"
-    )} `}</span>
+    )}
+    `}</span>
+    ...more line of code ...
+```
+
+```sh
+  header.scss
+    <!--parent element -->
+    .header{
+      background-color: #003580;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      position: relative; //// parent element is here
+
+    .headerSearchItem{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .headerSearchInput{
+          border: none;
+          outline: none; /// removes the border outline sa input box
+        }
+
+        .date{
+          position: absolute;
+          top: 40px; /// mo baba sa search bar tungod sa position absolute ug relative:parent element
+        }
+
+        .headerSearchText{
+          color: lightgray;
+          cursor: pointer;
+        }
 
 ```
 
