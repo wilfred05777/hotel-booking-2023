@@ -196,6 +196,8 @@ npm install normalize.css
 // --------------------------------------------------
 
 // option for adult , children and rooms state
+
+// ---- openOptions - onClick A ref
 const [openOptions, setOpenOptions] = useState(false);
 
 // ang mo consume sa option is a pointer and setOption is the updater sa output
@@ -218,6 +220,17 @@ const handleOption = (name, operation) => {
   });
 };
 // ----------------------------------------------------
+// ---- onClick A ref
+<span
+  // !openOptions opposite | hide and show options: adult, children, room selection
+  onClick={() => setOpenOptions(!openOptions)}
+  className="headerSearchText"
+>
+  {/* how did this happen? name? and the ui connection confuse? */}
+  {`${options.adult} adult - ${options.children} children - ${options.room} room`}
+</span>;
+
+// ---- my side note: ----------------------
 {
   /* how did this happen? name? and the ui connection confuse? */
   // My Understanding:
@@ -225,9 +238,7 @@ const handleOption = (name, operation) => {
   // ang initial value updated value
 }
 {
-  `
-  ${options.adult} adult - ${options.children} children - ${options.room} room
-  `;
+  `${options.adult} adult - ${options.children} children - ${options.room} room `;
 }
 
 // -----------------------------------------------------

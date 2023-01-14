@@ -122,14 +122,12 @@ const Header = ({ type }) => {
                 <FontAwesomeIcon icon={faPerson} className="headerIcon" />
                 {/* <span className="headerSearchText">2 adults 2 children 1 room</span> */}
                 <span
-                  // !openOptions opposite | hide and show options
+                  // !openOptions opposite | hide and show options: adult, children, room selection
                   onClick={() => setOpenOptions(!openOptions)}
                   className="headerSearchText"
                 >
                   {/* how did this happen? name? and the ui connection confuse? */}
-                  {`
-            ${options.adult} adult - ${options.children} children - ${options.room} room
-            `}
+                  {`${options.adult} adult - ${options.children} children - ${options.room} room`}
                 </span>
                 {openOptions && (
                   <div className="options">
