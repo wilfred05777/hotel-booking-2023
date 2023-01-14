@@ -90,31 +90,28 @@ npm install normalize.css
 - Hotel.jsx
 
 ```sh
-Hotel.jsx
-  <Navbar />
-  <Header type="list" />
-
-
+<Navbar />
+<Header type="list" />
 ```
 
 - Header.jsx
 
 ```sh
-  const Header = ({ type }) => {
-  ...
-  <div className="header">
-      <div
-        /// mo trigger kung naa ko sa url / or /hotel
-        className={
-          type === "list" ? "headerContainer listMode" : "headerContainer"
-        }
-      >
-    ....
+const Header = ({ type }) => {
+...
+<div className="header">
+    <div
+      /// mo trigger kung naa ko sa url / or /hotel
+      className={
+        type === "list" ? "headerContainer listMode" : "headerContainer"
+      }
+    >
+  ....
 
-  {/* pag ang type dili equal sa list ihide nya   */}
-    {type !== "list" && (
-        <>
-        ...code
-        </>
-    }
+{/* pag ang type dili equal sa list ihide nya   */}
+  {type !== "list" && (
+      <>
+      ...code
+      </>
+}
 ```
