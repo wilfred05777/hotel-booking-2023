@@ -58,6 +58,7 @@
       bottom: -25px;
       width: 100%; /// naka set ug 100% 
       max-width: 1024px; /// para dili mo lamapas 
+      z-index: 999; /// para dili mo overlapang featured
 
       .headerSearchItem{
         display: flex;
@@ -72,6 +73,7 @@
         .date{
           position: absolute;
           top: 40px; /// mo baba sa search bar tungod sa position absolute ug relative:parent element
+          z-index: 2;
         }
 
         .headerSearchText{
@@ -86,6 +88,7 @@
       }
 
       .options{
+        z-index: 2;
         position: absolute;
         top: 40px;
         background-color: #fff;

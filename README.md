@@ -304,6 +304,265 @@ const Header = ({ type }) => {
   }
 ```
 
-```jsx
+<hr>
 
+##### CREATING 1ST LISTING w/ IMAGES
+
+- start time 0:43:06 - 0:47:40 end
+- create /component/featured/Featured.jsx
+- create /component/featured/featured.scss
+- add <Featured> to Home.jsx
+
+```jsx
+/// Home.jsx
+import Navbar from "../../components/navbar/Navbar";
+import Header from "../../components/header/Header";
+import "./home.scss";
+import React from "react";
+import Featured from "../../components/featured/Featured";
+
+const Home = () => {
+  return (
+    <div>
+      <Navbar />
+      <Header />
+      <div className="homeContainer">
+        <Featured />
+      </div>
+    </div>
+  );
+};
+
+export default Home;
 ```
+
+```scss
+// home.scss
+.homeContainer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+```
+
+```jsx
+/// Featured.jsx
+import React from "react";
+import "./featured.scss";
+
+const Featured = () => {
+  return (
+    <div className="featured">
+      <div className="featuredItem">
+        <img
+          src="https://images.unsplash.com/photo-1444201983204-c43cbd584d93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt="hotel"
+          className="featuredImg"
+        />
+        <div className="featuredTitles">
+          <h1>Austin</h1>
+          <h2>123 Properties</h2>
+        </div>
+      </div>
+      <div className="featuredItem">
+        <img
+          src="https://images.unsplash.com/photo-1495365200479-c4ed1d35e1aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt="hotel"
+          className="featuredImg"
+        />
+        <div className="featuredTitles">
+          <h1>Bombai</h1>
+          <h2>123 Properties</h2>
+        </div>
+      </div>
+      <div className="featuredItem">
+        <img
+          src="https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+          alt="hotel"
+          className="featuredImg"
+        />
+        <div className="featuredTitles">
+          <h1>Corota</h1>
+          <h2>123 Properties</h2>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Featured;
+```
+
+```scss
+// featured.scss
+.featured {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 1;
+
+  .featuredItem {
+    position: relative;
+    color: #fff;
+    border-radius: 10px; /// border-radius will not work without overflow hidden
+    overflow: hidden;
+    height: 215px; // 250px
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+    .featuredTitles {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+    }
+
+    .featuredImg {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+```
+
+```scss
+// header.scss
+.header {
+  background-color: #003580;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  position: relative; //// parent element is here
+
+  .headerContainer {
+    width: 100%;
+    max-width: 1024px;
+    margin: 20px 0px 100px 0px;
+
+    .headerList {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    .headerListItem {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+
+      &.active {
+        border: 1px solid #fff;
+        padding: 10px;
+        border-radius: 25px;
+      }
+    }
+
+    .headerTitle {
+    }
+
+    .headerDesc {
+      margin: 20px 0px;
+    }
+    .headerBtn {
+      background-color: #0071c2;
+      color: #fff;
+      font-weight: 500;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .headerSearch {
+      height: 50px;
+      background-color: #fff;
+      border: 3px solid #febb02;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 20px 0px;
+      border-radius: 5px;
+      position: absolute; /// this wont work if if there is no position relative on the parent element
+      bottom: -25px;
+      width: 100%; /// naka set ug 100%
+      max-width: 1024px; /// para dili mo lamapas
+      z-index: 999; /// para dili mo overlapang featured
+
+      .headerSearchItem {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .headerSearchInput {
+          border: none;
+          outline: none; /// removes the border outline sa input box
+        }
+
+        .date {
+          position: absolute;
+          top: 40px; /// mo baba sa search bar tungod sa position absolute ug relative:parent element
+          z-index: 2;
+        }
+
+        .headerSearchText {
+          color: lightgray;
+          cursor: pointer;
+        }
+
+        .headerIcon {
+          color: lightgray;
+        }
+      }
+
+      .options {
+        z-index: 2;
+        position: absolute;
+        top: 40px;
+        background-color: #fff;
+        color: gray;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+        box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+        .optionItem {
+          width: 200px;
+          display: flex;
+          justify-content: space-between;
+          margin: 10px;
+          .optionText {
+          }
+          .optionCounter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            color: #000;
+
+            .optionCounterButton {
+              width: 30px;
+              height: 30px;
+              border: 1px solid #0071c2;
+              color: #0071c2;
+              cursor: pointer;
+              background-color: #fff;
+
+              &:disabled {
+                cursor: not-allowed; //prevent and disabled clicked
+              }
+            }
+            .optionCounterNumber {
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .headerContainer.listMode {
+    margin: 20px 0px 0px 0px;
+  }
+}
+```
+
+<hr >
