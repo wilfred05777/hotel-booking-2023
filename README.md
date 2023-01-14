@@ -123,10 +123,9 @@ const Header = ({ type }) => {
 
 - npm i react-date-range [npm package](https://www.npmjs.com/package/react-date-range)
 - [react date range official doc](https://hypeserver.github.io/react-date-range/)
--
 
 ```jsx
-Header.jsx
+//Header.jsx
   import { DateRange } from "react-date-range";
   import "react-date-range/dist/styles.css"; // main css file
   import "react-date-range/dist/theme/default.css"; // theme css file
@@ -161,8 +160,8 @@ Header.jsx
     ...more line of code ...
 ```
 
-```jsx
-  header.scss
+```scss
+  //header.scss
     <!--parent element -->
     .header{
       background-color: #003580;
