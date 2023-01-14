@@ -26,6 +26,7 @@ const Header = ({ type }) => {
     }
   ]);
 
+  // option for adult , children and rooms state
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
@@ -74,7 +75,8 @@ const Header = ({ type }) => {
           </div>
         </div>
 
-        {/* pag ang type dili equal sa list ihide nya   */}
+        {/* pag ang type dili equal sa list ihide nya, 
+        if kung mo navigate ang user sa default ur which is '/' makita ang Header section and if pag mo navigate sa /hotel ihide ang Header section ug SearchBar  */}
         {type !== "list" && (
           <>
             <h1 className="headerTitle">
@@ -105,6 +107,7 @@ const Header = ({ type }) => {
                   date[0].endDate,
                   "MM/dd/yyyy"
                 )} `}</span>
+
                 {openDate && (
                   <DateRange
                     editableDateInputs={true}
