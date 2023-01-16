@@ -592,3 +592,17 @@ export default Featured;
 ```
 
 <hr>
+
+```jsx
+// declare to return built in Date function and getFullyear function
+const getCurrentYear = () => {
+  return new Date().getFullYear();
+};
+
+/// return output in frontent
+{
+  getCurrentYear();
+}
+```
+
+<hr >
