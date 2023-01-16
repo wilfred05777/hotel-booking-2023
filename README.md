@@ -567,3 +567,14 @@ export default Featured;
 ```
 
 <hr >
+
+```scss
+// 0:52:00
+// PropertyList.jsx
+// <div className="pListItem">
+
+// propertyList.scss
+.pListItem{
+    flex:1; /// para ang kada image the same size mao ni purpose sa flex: 1 mag base sya kada element
+    /// If an element has flex: 1, this means the size of all of the other elements will have the same width as their content, but the element with flex: 1 will have the remaining full space given to it.
+```
