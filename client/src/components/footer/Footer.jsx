@@ -4,6 +4,10 @@ import "./footer.scss";
 const Footer = () => {
   const [copyRightYear, setCopyRightYear] = useState(new Date());
 
+  const getCurrentYear = () => {
+    return new Date().getFullYear();
+  };
+
   return (
     <div className="footer">
       <div className="fLists">
@@ -49,9 +53,7 @@ const Footer = () => {
         </ul>
       </div>
 
-      <div className="fText">
-        Copyright © {copyRightYear.toLocaleTimeString()} JM's Booking
-      </div>
+      <div className="fText">Copyright © {getCurrentYear()} JM's Booking</div>
     </div>
   );
 };
