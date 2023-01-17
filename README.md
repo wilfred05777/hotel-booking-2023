@@ -606,3 +606,78 @@ const getCurrentYear = () => {
 ```
 
 <hr >
+
+##### Handling Search in Header to List page
+
+```jsx
+// 1:07:57 start
+// Header.jsx
+
+// step 1:
+<button className="headerBtn" onClick={handleSearch}>
+  Search
+</button>;
+
+// step 2: create handleSearch
+const handleSearch = () => {
+  // console.log("Handle search");
+};
+
+// Step 3: import useNavigate from react-router-dom
+import { useNavigate } from "react-router-dom";
+// ...
+const navigate = useNavigate();
+// then refactor handleSearch
+const handleSearch = () => {
+  navigate("/hotels", { state: {} });
+};
+
+// step 4: refactor input searchbox onChange={(e) => setDestination(e.target.value)}
+<input
+  type="text"
+  placeholder="Where are you going?"
+  className="headerSearchInput"
+  onChange={(e) => setDestination(e.target.value)}
+/>;
+
+/// step 5: update handleSearch state: {destination, date, options }
+const handleSearch = () => {
+  navigate("/hotels", { state: { destination, date, options } });
+};
+
+// =================================================================
+// HOW TO USE IT IN List.jsx
+//
+//
+// steps:
+import { useLocation } from "react-router-dom";
+// ...
+const List = () => {
+const location = useLocation();
+/// console.log(location) to check and display the state in DOM
+
+/// then next step is to create a state of each value
+const [destination, setDestination] = useState(location.state.destination);
+  const [date, setDate] = useState(location.state.date);
+  const [options, setOptions] = useState(location.state.options);
+
+
+/// next step
+/// also import { format } from "date-fns";
+ <div className="lsItem">
+    <label>Check-in Date</label>
+    <span>
+      {`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
+        date[0].endDate,
+        "MM/dd/yyyy"
+      )} `}
+    </span>
+  </div>
+
+/// also update the destination placeholder =====
+div className="lsItem">
+  <label>Destination</label>
+  <input placeholder={destination} type="text" />
+```
+
+<hr>
